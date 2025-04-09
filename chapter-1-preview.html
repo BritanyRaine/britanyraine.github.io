@@ -125,25 +125,39 @@
               <p><strong>Sign up</strong> and get exclusive access to Chapters <strong>2–4</strong> before the world catches up.</p>
               <p><em>Welcome to the Syndicate, Chum.</em></p>
             </div>
-            <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1440847/forms/151193920471041270/subscribe" method="post" target="_blank">
-              <div class="ml-form-formContent">
-                <div class="ml-form-fieldRow ml-last-item">
-                  <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
-                    <input aria-label="email" type="email" name="fields[email]" placeholder="Sign Your Soul Here" autocomplete="email">
-                  </div>
-                </div>
-              </div>
-              <input type="hidden" name="ml-submit" value="1">
-              <div class="ml-form-embedSubmit">
-                <button type="submit">Send the Burn</button>
-              </div>
-              <input type="hidden" name="anticsrf" value="true">
-            </form>
-          </div>
-        </div>
+            <form class="ml-block-form"
+      action="https://assets.mailerlite.com/jsonp/1440847/forms/151193920471041270/subscribe"
+      method="post"
+      target="hidden_iframe"
+      onsubmit="showConfirmation()">
+  <div class="ml-form-formContent">
+    <div class="ml-form-fieldRow ml-last-item">
+      <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+        <input aria-label="email" type="email" name="fields[email]" placeholder="Sign Your Soul Here" autocomplete="email" required>
       </div>
     </div>
   </div>
+  <input type="hidden" name="ml-submit" value="1">
+  <div class="ml-form-embedSubmit">
+    <button type="submit">Send the Burn</button>
+  </div>
+  <input type="hidden" name="anticsrf" value="true">
+</form>
+
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
+<p id="success-message" style="display:none; margin-top: 1rem; color: orange; font-style: italic;">
+  🔥 You're in. Check your inbox, Chum.
+</p>
+
+<script>
+  function showConfirmation() {
+    setTimeout(() => {
+      document.getElementById("success-message").style.display = "block";
+    }, 500); // slight delay to allow iframe to receive response
+  }
+</script>
+
  
   <p style="margin-top: 40px;">
     <a href="index.html" style="color: #ff6633;">&larr; Return to Main Page</a>
